@@ -1,0 +1,49 @@
+
+* { 
+    font-family: "Racing Sans One", sans-serif;
+}
+.boardInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#board, .boardInfo {
+    max-width: 1000px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border: 5px solid black;
+}
+
+#start{
+    font-size: 25px;
+    background-color: rgb(138, 5, 171);
+    border: none;
+    color: white;
+}
+
+#scoreBoard {
+    aspect-ratio: 1;
+}
+
+#gameOver {
+    display: none;
+}
+
+.square {
+    aspect-ratio: 1;
+}
+
+.emptySquare {
+    background-color: lightpink;
+}
+
+.snakeSquare {
+    background-color: rgb(219, 0, 142);
+}
+
+.foodSquare {
+    background-color: yellow;
+}
