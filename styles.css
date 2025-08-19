@@ -2,27 +2,70 @@
 * { 
     font-family: "Racing Sans One", sans-serif;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(173, 224, 255);
+}
+
+#title {
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
 .boardInfo {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
+
 #board, .boardInfo {
-    max-width: 1000px;
+    max-width: 800px;
 }
 
 #board {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    border: 5px solid black;
+    width: 700px;
+    height: 700px;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    grid-template-columns: repeat(var(--board-size), 1fr);
 }
 
 #start{
-    font-size: 25px;
-    background-color: rgb(138, 5, 171);
-    border: none;
+    background-color: #ffd700;
     color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    font-size: 50px;
+    font-family: "Racing Sans One", sans-serif;
 }
+
+#start:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 
 #scoreBoard {
     aspect-ratio: 1;
@@ -32,18 +75,14 @@
     display: none;
 }
 
-.square {
-    aspect-ratio: 1;
-}
-
 .emptySquare {
-    background-color: lightpink;
+    background-color: rgb(255, 255, 255);
 }
 
 .snakeSquare {
-    background-color: rgb(219, 0, 142);
+    background-color: rgb(255, 187, 0);
 }
 
 .foodSquare {
-    background-color: yellow;
+    background-color: rgb(56, 89, 10);
 }
